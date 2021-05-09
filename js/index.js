@@ -14,7 +14,7 @@ const randomIntegerFromInterval = (min, max) => {
 const btnStartRef = document.querySelector('[data-action="start"]');
 const btnStopRef = document.querySelector('[data-action="stop"]');
 const bodyRef = document.querySelector("body");
-let timeInterval;
+let timeInterval = null;
 
 btnStartRef.addEventListener("click", onBtnStartClick);
 btnStopRef.addEventListener("click", onBtnStopClick);
@@ -30,6 +30,6 @@ function onBtnStartClick() {
 }
 
 function onBtnStopClick() {
-  console.log("onBtnStopClick");
   clearInterval(timeInterval);
+  timeInterval = null;
 }
